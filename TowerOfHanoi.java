@@ -34,10 +34,11 @@ class Tower
 
 	public void moveDisks(int n, Tower source, Tower destination, Tower buffer)
 	{
-		if (n == 0)
-			System.out.println("Moving disk " + n +  " from " + source + " to " + destination);
+		if (n <= 0)
+			return;
 
 		moveDisks(n - 1, source, buffer, destination);
+		System.out.println("Moving disk " + n +  " from " + source + " to " + destination);
 		moveDisks(n - 1, buffer, destination, source);
 	}
 
