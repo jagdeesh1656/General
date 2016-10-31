@@ -65,6 +65,24 @@ class BinaryTree
 
 		}
 	}
+
+	public boolean searchNode(int data)
+	{
+		int branch = 0;
+		if (root.data == data)
+			return true;
+		
+		while (root != null)
+		{
+			branch ++;
+			if (branch % 2 == 0)
+				root = root.right;
+			else
+				root = root.left;
+		}
+		
+		return false;
+	}
 	
 	public void doInorderTraversal(Node root)
 	{
@@ -79,15 +97,22 @@ class BinaryTree
 	{
 	
 		BinaryTree bTree = new BinaryTree();
+		Queue q = new Queue(20);
+
 		Node root = bTree.addRoot(0);
 		bTree.addNode(7);
 		bTree.addNode(8);
 		bTree.addNode(9);
 		
+		Node temp_node = root;
+		
+		
 		System.out.println(root.data);
 		System.out.println(root.left.data);
 		System.out.println(root.right.data);
 		System.out.println(root.left.left.data);
-		// bTree.doInorderTraversal(root);
+
+		System.out.println(bTree.searchNode(5));
+		bTree.doInorderTraversal(root);
 	}
 }
