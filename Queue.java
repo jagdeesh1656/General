@@ -30,7 +30,7 @@ public class Queue
 		queue[last] = data;
 	}
 
-	public void delete(int data)
+	public void delete()
 	{
 
 		if (first == -1) return;
@@ -42,11 +42,20 @@ public class Queue
 	public void printQueue()
 	{
 
-		for (int i = 0; i < last; i ++)
+		for (int i = first; i <= last; i ++)
 		{
 
 			System.out.println(queue[i]);
 		}
+	}
+
+	public boolean isEmpty()
+	{
+
+		if ((queue.length == 0) || first == -1)
+			return true;
+		
+		return false;
 	}
 
 	// public static void main(String args[])
