@@ -7,23 +7,21 @@ public class EverythingAboutPrimesAndFactors
 	public static void main(String args[])
 	{
 
-		SieveOfEratosthenes();
+		SieveOfEratosthenes(10001);
 
 	}
 
-	private static void SieveOfEratosthenes()
+	private static void SieveOfEratosthenes(int max)
 	{
 
-		int n = 10001;
+		boolean[] integers = new boolean[max];
 
-		boolean[] integers = new boolean[n];
-
-		for(int p=2; p < Math.sqrt(n); p++)
+		for(int p=2; p < Math.sqrt(max); p++)
 		{
 			if (!integers[p])
 			{
 				// for(int i=p*p; i<n; i+=p)
-				for(int i = 2*p; i <n ; i+=p)
+				for(int i = 2*p; i <max ; i+=p)
 				{
 					integers[i] = true;
 				}

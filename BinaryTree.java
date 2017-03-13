@@ -2,13 +2,13 @@ import java.util.*;
 
 class BinaryTree
 {
-	class Node
+	class TreeNode
 	{
 	  int data;
-	  Node left;
-	  Node right;
+	  TreeNode left;
+	  TreeNode right;
 	
-	  public Node(int data)
+	  public TreeNode(int data)
 	  {
 	    this.data = data;
 	    left = null;
@@ -16,103 +16,108 @@ class BinaryTree
 	  }
 	}
 	
-	Node root;
+	TreeNode root;
 	int branch;
 	
-	public Node addRoot(int data)
-	{
-		root = new Node(data);
-		branch = 0;
-		return root;
-	}
+	// public Node addRoot(int data)
+	// {
+	// 	root = new Node(data);
+	// 	branch = 0;
+	// 	return root;
+	// }
 	
-	public void addNode(int data)
-	{
-		Node newNode = null;
+	// public void addNode(int data)
+	// {
+	// 	Node newNode = null;
 		
-		if (root == null)
-		{
-			newNode = addRoot(data);
-			root = newNode;
-			return;
-		}
+	// 	if (root == null)
+	// 	{
+	// 		newNode = addRoot(data);
+	// 		root = newNode;
+	// 		return;
+	// 	}
 		
-		newNode = new Node(data);
-		Node runningNode = root;
+	// 	newNode = new Node(data);
+	// 	Node runningNode = root;
 		
-		while (runningNode != null)
-		{
-			branch ++;
-			if (runningNode.left == null)
-			{
-				runningNode.left = newNode;
-				return;
-			}
+	// 	while (runningNode != null)
+	// 	{
+	// 		branch ++;
+	// 		if (runningNode.left == null)
+	// 		{
+	// 			runningNode.left = newNode;
+	// 			return;
+	// 		}
 			
-			else if (runningNode.right == null)
-			{
-				runningNode.right = newNode;
-				return;
-			}
+	// 		else if (runningNode.right == null)
+	// 		{
+	// 			runningNode.right = newNode;
+	// 			return;
+	// 		}
 			
-			else
-			{
-				if (branch % 2 == 0)
-					runningNode = runningNode.right;
-				else
-					runningNode = runningNode.left;
-			}
+	// 		else
+	// 		{
+	// 			if (branch % 2 == 0)
+	// 				runningNode = runningNode.right;
+	// 			else
+	// 				runningNode = runningNode.left;
+	// 		}
 
-		}
-	}
+	// 	}
+	// }
 
-	public boolean searchNode(int data)
-	{
-		int branch = 0;
-		if (root.data == data)
-			return true;
+	// public boolean searchNode(int data)
+	// {
+	// 	int branch = 0;
+	// 	if (root.data == data)
+	// 		return true;
 		
-		while (root != null)
-		{
-			branch ++;
-			if (branch % 2 == 0)
-				root = root.right;
-			else
-				root = root.left;
-		}
+	// 	while (root != null)
+	// 	{
+	// 		branch ++;
+	// 		if (branch % 2 == 0)
+	// 			root = root.right;
+	// 		else
+	// 			root = root.left;
+	// 	}
 		
-		return false;
-	}
+	// 	return false;
+	// }
 	
-	public void doInorderTraversal(Node root)
-	{
-		if (root == null)
-			return;
-		doInorderTraversal(root.left);
-		System.out.println(root.data + "");
-		doInorderTraversal(root.right);
-	}
+	// public void doInorderTraversal(Node root)
+	// {
+	// 	if (root == null)
+	// 		return;
+	// 	doInorderTraversal(root.left);
+	// 	System.out.println(root.data + "");
+	// 	doInorderTraversal(root.right);
+	// }
+
+	// public void levelOrderTraversal(Node root)
+	// {
+
+	// 	if (root == null)
+	// 		return;
+
+	// 	Queue q = new Queue(20);
+
+	// 	Node temp_node = root;
+	// 	q.add(temp_node);
+	// 	while (!q.isEmpty())
+	// 	{
+
+	// 		q.delete();
+	// 		System.out.println(temp_node.data);
+	// 		if (temp_node.left != null)
+	// 			q.add(temp_node.left);
+	// 		if (temp_node.right != null)
+	// 			q.add(temp_node.right);
+	// 	}
+	// }
 	
 	public static void main(String args[])
 	{
 	
-		BinaryTree bTree = new BinaryTree();
-		Queue q = new Queue(20);
-
-		Node root = bTree.addRoot(0);
-		bTree.addNode(7);
-		bTree.addNode(8);
-		bTree.addNode(9);
-		
-		Node temp_node = root;
-		
-		
-		System.out.println(root.data);
-		System.out.println(root.left.data);
-		System.out.println(root.right.data);
-		System.out.println(root.left.left.data);
-
-		System.out.println(bTree.searchNode(5));
-		bTree.doInorderTraversal(root);
+		GenericQueue<TreeNode> q = new GenericQueue<TreeNode>();
 	}
 }
