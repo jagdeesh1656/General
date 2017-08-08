@@ -1,0 +1,21 @@
+When would you make a variable volatile?
+	- volatile is used to tell the compiler that the variable must not be optimised or cached as it can be changed throughout the program
+	- Used in programs where variables can be modified with Interrupt routines, Multithreaded applications
+How do you decide whether to use a HashMap or a TreeMap?
+	- HashMap does not have any ordering of keys
+	- treeMap has key ordering i.e. its keys must implement the Comparable interface and have a compareTo function ovverriden so that the keys can be ordered
+How do you decide whether to use a CopyOnWriteArrayList or a Collections.synchronizedList(ArrayList)?
+	- This is ordinarily too costly, but may be more efficient than alternatives when traversal operations vastly outnumber mutations, and is useful when you cannot or don't want to synchronize traversals, yet need to preclude interference among concurrent threads
+	- synchronizedList I guess uses some sort of SpinWait mechanism to keep the thread runnign and signal it in rather than having CriticalSections (Monitor enter/exit guarded code)
+When would you use mergesort over quicksort?
+	- Merge has a worst case of log n where as quick has worst case of n^2
+	- There is a need to pick a pivot in Quick and depending upon the amount of data, it could be hard to get one
+When might recursion cause stack overflows?
+	- When there is no exit case/ base case
+	- When 
+Is Math.abs(Random.nextInt()) always positive?
+	- only if nextInt(int number) is used i.e. it must have a integer parameter
+What are the pros/cons of async vs. blocking I/O?
+	- async means the API always first returns back to you with some messages that it has started a "background" operation for your task and you must have code where in you catch the response when ready
+	- blocking means the API hangs up your thread until it has an answer for you
+What unit tests would you write for Arrays.binarySearch?

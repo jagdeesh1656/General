@@ -1,0 +1,81 @@
+// Write some code which receives integers one at a time
+  // and at each step determines what is the fifth-largest integer
+  3 // seen so far.
+  4 //
+  5 // e.g. suppose the stream so far has been
+  6 // 10, 30, 20, 50, 40
+  7 // right now we return 10
+  8 // then we get 25
+  9 // we would have to return 20
+ 10 // if we next get 1, we'd still return 20
+ 11 //
+ 12 // Assume that some other code will read the stream and call
+ 13 // a method of your class each time a new integer arrives.
+
+
+int maxNumber = streamOfIntgers[0];
+
+for (Integer number : streamOfIntegers)
+{
+    if (number > maxNumber)
+    {
+        maxNumber = number;
+    }
+    
+}
+
+while (streamOfIntegers != NULL)
+{
+    DoublyLinkedListNode node = new DoubleLinkedListNode(integerReceived);
+    int linkedListLength = 0;
+    
+    if (linkedListLength == 5)
+    {
+        if (integerReceived <= tail )
+        {
+            continue;
+        }
+        
+        head = head.next;
+    }
+    
+    if (linkedList == NULL)
+    {
+        head = tail = node;
+    }
+    
+    if (integerReceived >= tail.data)
+    {
+        tail.next = node;
+        node.prev = tail;
+        
+        tail = node;
+    }
+    else (integerReceived < tail.data)
+    {
+        Node origTail = tail;
+        while (tail.data >= integerReceived)
+        {
+            tail = tail.previous;
+        }
+        
+        tail.next = node;
+        node.prev = tail;
+     
+        node.next = origTail;
+        origTail.prev = node;
+        
+        
+    }
+    linkedListLength = linkedListLength + 1;
+    
+    
+    
+    
+    print (tail.data)
+    
+    
+}
+
+
+Min heap O(log N_)

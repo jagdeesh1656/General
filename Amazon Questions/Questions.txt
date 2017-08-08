@@ -1,0 +1,33 @@
+1. Given an array containing zero and non-zero elements, modify the array such that it has the 0’s at the end and the non-zero elements at the beginning. Print the number of swaps required and the number of non-zero elements.
+
+2. Given a ‘pattern’ and a ‘text’ print the indexes of ‘text’ where any anagrams of ‘pattern’ occur.
+  Input:
+    abcdad (text)
+    abcd (pattern)
+  Output:
+    0, 1 
+
+3. Find the longest palindromic substring from the given string
+
+4. You will be given N number of points as an array (CPPoint class). CPPoint class will have x and y coordinate. Find the closest k number of points from the origin.
+
+5. Swap two nodes in a linked list
+
+6. Find kth smallest element in a binary search tree
+
+7. Longest increasing subsequence in an array
+
+8. 0/1 knapsack
+
+9. There is a conference room. N people are joining the conference. You have the start time and end time of each of them visiting it. You are asked to determine the maximum number of people that can be inside the room. 
+
+Example – Four people are visiting the conference 
+Person A	B	C	D	
+Start (hour) 1	3	2	5	
+End (hour) 4	5	7	10 
+Answer will be – 3
+
+10. How to check the validity of a 4 digit credit card expiration date (mm/yy) 
+that still works 100 years from now. 
+
+11. 
