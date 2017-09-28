@@ -15,6 +15,7 @@ def checkReplaceOrEqual(string1, string2):
 
 def checkInsertOrDelete(string1, string2):
 	string2 = string2[::-1]
+	print (string2)
 	j = len(string2) - 1
 	count = 0
 
@@ -28,7 +29,7 @@ def checkInsertOrDelete(string1, string2):
 		print ("1 insert/ delete")
 
 string1 = "pale"
-string2 = "ale"
+string2 = "pae"
 
 if len(string1) == len(string2):
 	checkReplaceOrEqual(string1, string2)
